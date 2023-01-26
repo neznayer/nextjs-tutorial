@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import utilStyles from '../styles/utils.module.css';
-import Layout, { siteTitle } from '../components/layout';
-import { getSortdePostsData } from '../lib/posts';
+import Head from "next/head";
+import utilStyles from "../styles/utils.module.css";
+import Layout, { siteTitle } from "../components/layout";
+import { getSortedPostsData } from "../lib/posts";
 
-export async function getstaticProps() {
-  const allPostsData = getSortdePostsData();
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData,
@@ -22,12 +22,12 @@ export default function Home({ allPostsData }) {
       <section className={utilStyles.headingMd}>
         <p>
           Hi, I'm Anton. I'm a fullstack developer and illustrator. Sometimes a
-          En/Ru/Jp translator as well. It's me who translated{' '}
+          En/Ru/Jp translator as well. It's me who translated{" "}
           <a href="https://www.systemax.jp/en/sai/">Easy Paint Tool SAI</a> into
           Russian.
         </p>
         <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
+          (This is a sample website - you’ll be building a site like this on{" "}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
