@@ -1,11 +1,11 @@
 import Head from "next/head";
 import utilStyles from "../styles/utils.module.css";
-import homeStyles from "../styles/Home.module.css";
 import Layout, { siteTitle } from "../components/layout";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import { FaInstagram, FaGithub } from "react-icons/fa";
+import ProjectCard from "../components/project-card";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -51,21 +51,23 @@ export default function Home({ allPostsData }) {
 
       <section className={utilStyles.headingMd}>
         <h2 className={utilStyles.headingLg}>My projects</h2>
-        <ul>
-          <div className={homeStyles.card}>
-            <Link href="#">Power of habits</Link>
-            <br />
-            <small className={utilStyles.lightText}>
-              A web app that helps to keep you following your goals in life
-            </small>
-          </div>
-          <div className={homeStyles.card}>
-            <Link href="#">My art store</Link>
-            <br />
-            <small className={utilStyles.lightText}>
-              Stickers, Posters, etc., made by me, in a web shop, made by me
-            </small>
-          </div>
+        <ul className={utilStyles.list}>
+          <li>
+            <ProjectCard
+              title="Power of habits"
+              link="https://power-of-habits.vercel.app/"
+              githubLink="https://github.com/neznayer/power-of-habits"
+              description="A web app that helps to keep you following your goals in life"
+            />
+          </li>
+          <li>
+            <ProjectCard
+              title="My art store"
+              link="#"
+              githubLink="#"
+              description="Stickers, posters, and just art, made by me (in a web shop, made by me)"
+            />
+          </li>
         </ul>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
