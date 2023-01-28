@@ -6,13 +6,18 @@ import { FaGithub } from "react-icons/fa";
 export default function ({ title, description, link, githubLink }) {
   return (
     <div className={styles.card}>
-      <Link href={link}>{title}</Link>
+      <Link href={link} target="_blank">
+        {title}
+      </Link>
       <br />
       <small className={utilStyles.lightText}>{description}</small>
       <small className={styles["bottom-right-container"]}>
         <span>
           <FaGithub />
-          <Link href={githubLink}> Source code</Link>
+          <Link href={githubLink} target="_blank">
+            {" "}
+            Source code
+          </Link>
         </span>
       </small>
     </div>
