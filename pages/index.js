@@ -26,12 +26,12 @@ export default function Home({ allPostsData }) {
       <section>
         <ul className={`${utilStyles.list} ${utilStyles.horizontalList}`}>
           <li>
-            <Link href="#">
+            <Link href="https://instagram.com/nezneznezneznez">
               <FaInstagram /> Instagram{" "}
             </Link>
           </li>
           <li>
-            <Link href="#">
+            <Link href="https://github.com/neznayer">
               <FaGithub /> Github{" "}
             </Link>
           </li>
