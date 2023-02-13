@@ -27,12 +27,12 @@ export default function Home({ allPostsData }) {
         <ul className={`${utilStyles.list} ${utilStyles.horizontalList}`}>
           <li>
             <Link href="https://instagram.com/nezneznezneznez">
-              <FaInstagram /> Instagram{" "}
+              <FaInstagram /> Instagram
             </Link>
           </li>
           <li>
             <Link href="https://github.com/neznayer">
-              <FaGithub /> Github{" "}
+              <FaGithub /> Github
             </Link>
           </li>
         </ul>
@@ -41,10 +41,7 @@ export default function Home({ allPostsData }) {
         <p>
           Hi, I'm Anton. I'm a fullstack developer and illustrator. Sometimes a
           En/Ru/Jp translator as well. It's me who translated
-          <a href="https://www.systemax.jp/en/sai/">
-            {" "}
-            Easy Paint Tool SAI
-          </a>{" "}
+          <a href="https://www.systemax.jp/en/sai/">Easy Paint Tool SAI</a>
           into Russian.
         </p>
       </section>
@@ -54,18 +51,18 @@ export default function Home({ allPostsData }) {
         <ul className={utilStyles.list}>
           <li>
             <ProjectCard
-              title="Power of habits"
-              link="https://power-of-habits.vercel.app/"
-              githubLink="https://github.com/neznayer/power-of-habits"
-              description="A web app that helps to keep you following your goals in life"
+              title="My art portfolio website"
+              link="https://art-portfolio-neznayer.vercel.app/"
+              githubLink="https://github.com/neznayer/art-portfolio"
+              description="A portfolio page for my drawings"
             />
           </li>
           <li>
             <ProjectCard
-              title="My art store"
-              link="#"
-              githubLink="#"
-              description="Stickers, posters, and just art, made by me (in a web shop, made by me)"
+              title="Power of habits"
+              link="https://power-of-habits.vercel.app/"
+              githubLink="https://github.com/neznayer/power-of-habits"
+              description="A web app that helps to keep you following your goals in life"
             />
           </li>
         </ul>
