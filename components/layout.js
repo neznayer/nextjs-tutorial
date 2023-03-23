@@ -26,6 +26,18 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
+        {/* <select
+          value={router.locale}
+          onChange={(e) => {
+            router.push({ pathname, query }, asPath, {
+              locale: e.target.value,
+            });
+          }}
+        >
+          {router.locales.map((loc) => (
+            <option value={loc}> {loc} </option>
+          ))}
+        </select> */}
         {home ? (
           <>
             <Image

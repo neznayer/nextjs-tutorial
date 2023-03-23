@@ -6,17 +6,21 @@ import Link from "next/link";
 import Date from "../components/date";
 import { FaInstagram, FaGithub } from "react-icons/fa";
 import ProjectCard from "../components/project-card";
+import { getFrontMessage } from "../lib/front";
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+export async function getStaticProps({ locale }) {
+  const allPostsData = getSortedPostsData(locale);
+  const frontMessage = await getFrontMessage(locale);
+
   return {
     props: {
       allPostsData,
+      frontMessage,
     },
   };
 }
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData, frontMessage }) {
   return (
     <Layout home>
       <Head>
@@ -26,25 +30,28 @@ export default function Home({ allPostsData }) {
       <section>
         <ul className={`${utilStyles.list} ${utilStyles.horizontalList}`}>
           <li>
-            <Link href="https://instagram.com/nezneznezneznez">
+            <Link
+              className="flex flex-col items-center"
+              href="https://instagram.com/nezneznezneznez"
+            >
               <FaInstagram /> Instagram
             </Link>
           </li>
           <li>
-            <Link href="https://github.com/neznayer">
-              <FaGithub /> Github
+            <Link
+              href="https://github.com/neznayer"
+              className="flex flex-col items-center"
+            >
+              <FaGithub />
+              <span className="block">Github</span>
             </Link>
           </li>
         </ul>
       </section>
-      <section className={utilStyles.headingMd}>
-        <p>
-          Hi, I'm Anton. I'm a fullstack developer and illustrator. Sometimes a
-          En/Ru/Jp translator as well. It's me who translated
-          <a href="https://www.systemax.jp/en/sai/">Easy Paint Tool SAI</a>
-          into Russian.
-        </p>
-      </section>
+      <section
+        className={`${utilStyles.headingMd} pt-4`}
+        dangerouslySetInnerHTML={{ __html: frontMessage.contentHtml }}
+      ></section>
 
       <section className={utilStyles.headingMd}>
         <h2 className={utilStyles.headingLg}>My projects</h2>
@@ -59,10 +66,10 @@ export default function Home({ allPostsData }) {
           </li>
           <li>
             <ProjectCard
-              title="Power of habits"
+              title="Power of habits 🏗️"
               link="https://power-of-habits.vercel.app/"
               githubLink="https://github.com/neznayer/power-of-habits"
-              description="A web app that helps to keep you following your goals in life"
+              description="A web app that helps to keep you following your goals in life (under construction)"
             />
           </li>
         </ul>

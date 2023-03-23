@@ -1,6 +1,7 @@
 ---
-title: "About my art portfolio project"
+title: "自分のポートフォリオサイトの開発について"
 date: "2023-02-13"
+language: "ja-JP"
 ---
 
 ### 自分のお絵描きポートフォリオサイトをやっと終えた
