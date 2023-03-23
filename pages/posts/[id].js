@@ -5,6 +5,7 @@ import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 
 export async function getStaticProps({ params }) {
+  console.log("params.id", params.id);
   const postData = await getPostData(params.id);
   return {
     props: {
@@ -13,8 +14,8 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export async function getStaticPaths() {
-  const paths = getAllPostIds();
+export async function getStaticPaths({ locales }) {
+  const paths = locales.map((locale) => getAllPostIds(locale)).flat();
   return {
     paths,
     fallback: false,
@@ -33,7 +34,10 @@ export default function Post({ postData }) {
           <Date dateString={postData.date} />
         </div>
 
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }}></div>
+        <div
+          className=" [>h3]:text-xl"
+          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+        ></div>
       </article>
     </Layout>
   );

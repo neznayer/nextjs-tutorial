@@ -1,6 +1,7 @@
 ---
 title: 'About my "Power of habits" project'
 date: "2023-01-28"
+language: "en-US"
 ---
 
 I made this project to deal with all the New Year's resolutions, thal lasts only for a couple of weeks, at the longest.
